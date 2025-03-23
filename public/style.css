@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  color: var(--text-color);
+  border: none;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--background-color);
+  overflow-x: hidden;
+}
+
+button,
+a,
+ul,
+li {
+  transition: all 0.3s;
+  list-style: none;
+  text-decoration: none;
+}
+
+:root {
+  --main-yellow: #def241;
+  --main-pink: #f88dd5;
+  --main-blue: #5d31ff;
+  --background-color: #1c1c1c;
+  --text-color: #eeedf2;
+}
