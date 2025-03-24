@@ -1,7 +1,7 @@
 <template>
   <header>
     <div class="logo-container">
-      <p>LOGO</p>
+      <img src="/assets/pink-logo.svg" alt="logo" class="header-logo">
     </div>
     <nav class="navigation-container">
       <ul class="navigation-list">
@@ -10,11 +10,9 @@
         <li><a href="/services" class="navigation-list-item">Services</a></li>
         <li><a href="/blog" class="navigation-list-item">Blog</a></li>
         <li><a href="/contact-us" class="navigation-list-item">Contact</a></li>
+        <button class="lang-switcher">EN</button>
       </ul>
     </nav>
-    <div class="lang-switcher-container">
-      <p>EN</p>
-    </div>
   </header>
 </template>
 
@@ -30,19 +28,12 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  background-image: linear-gradient(
-    90deg,
-    rgba(222, 242, 65, 1) 0%,
-    rgba(146, 128, 177, 1) 20%,
-    rgba(93, 49, 255, 1) 50%,
-    rgba(106, 56, 252, 1) 80%,
-    rgba(248, 141, 213, 1) 100%
-  );
+  background-color: var(--main-blue);
   display: flex;
   align-items: center;
   justify-content: space-between;
   z-index: 999;
-  padding: 24px;
+  padding: 24px 96px;
 }
 
 .navigation-list {
@@ -55,6 +46,26 @@ header {
 .navigation-list-item {
   text-transform: uppercase;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 18px;
+}
+
+.navigation-list-item:hover {
+  color: var(--main-pink);
+}
+
+.lang-switcher {
+  background-color: transparent;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.logo-container {
+  width: 150px;
+}
+
+.header-logo {
+  width: 100%;
 }
 </style>

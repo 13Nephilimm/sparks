@@ -13,10 +13,13 @@
       </p>
       <Button color="blue" text="Explore Now" class="explore-btn" />
     </div>
-    <spline-viewer
-      class="hero-robot"
-      url="https://prod.spline.design/eZObZQKDHyvThNPc/scene.splinecode"
-    ></spline-viewer>
+    <div>
+      <div class="spotlight spotlight-1"></div>
+      <div class="spotlight spotlight-2"></div>
+      <div class="spotlight spotlight-3"></div>
+      <spline-viewer class="hero-robot"
+        url="https://prod.spline.design/Z4V1jnGb2pYsmYM7/scene.splinecode"></spline-viewer>
+    </div>
   </section>
 </template>
 
@@ -47,14 +50,14 @@ export default {
 
 .hero-text-container {
   padding: 24px;
-  margin: -96px 0 96px 48px;
+  margin: 0 0 96px 48px;
 }
 
 .main-heading {
   font-weight: 300;
   text-transform: uppercase;
   font-size: 64px;
-  color: var(--main-pink);
+  color: var(--main-blue);
 }
 
 .main-text {
@@ -95,8 +98,30 @@ export default {
   z-index: -1;
 }
 
-#logo {
-  display: none !important;
-  right: -300px !important;
+.spotlight {
+  content: "";
+  width: 300px;
+  height: 0;
+  position: absolute;
+  rotate: -30deg;
+  z-index: -1;
+}
+
+.spotlight-1 {
+  top: 25%;
+  right: 5%;
+  box-shadow: 0 0 200px 15px var(--main-pink);
+}
+
+.spotlight-2 {
+  bottom: 25%;
+  left: 25%;
+  box-shadow: 0 0 200px 20px var(--main-blue);
+}
+
+.spotlight-3 {
+  top: 25%;
+  left: 5%;
+  box-shadow: 0 0 200px 15px var(--text-color);
 }
 </style>
