@@ -124,4 +124,13 @@ export default {
   left: 5%;
   box-shadow: 0 0 200px 15px var(--text-color);
 }
+
+/* @media only screen and (max-width: 1570px) {
+  .hero-text-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+  }
+} */
 </style>

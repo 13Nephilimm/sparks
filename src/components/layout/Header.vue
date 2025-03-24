@@ -5,12 +5,14 @@
     </div>
     <nav class="navigation-container">
       <ul class="navigation-list">
-        <li><a href="/" class="navigation-list-item">Home</a></li>
-        <li><a href="/about-us" class="navigation-list-item">About Us</a></li>
-        <li><a href="/services" class="navigation-list-item">Services</a></li>
-        <li><a href="/blog" class="navigation-list-item">Blog</a></li>
-        <li><a href="/contact-us" class="navigation-list-item">Contact</a></li>
-        <button class="lang-switcher">EN</button>
+        <li><a href="/" class="navigation-list-item">{{ $t('home') }}</a></li>
+        <li><a href="/about-us" class="navigation-list-item">{{ $t('about') }}</a></li>
+        <li><a href="/services" class="navigation-list-item">{{ $t('services') }}</a></li>
+        <li><a href="/blog" class="navigation-list-item">{{ $t('blog') }}</a></li>
+        <li><a href="/contact-us" class="navigation-list-item">{{ $t('contact') }}</a></li>
+        <button class="lang-switcher" @click="changeLanguage(selectedLanguage === 'en' ? 'ge' : 'en')">
+          {{ selectedLanguage === 'en' ? 'GE' : 'EN' }}
+        </button>
       </ul>
     </nav>
   </header>
@@ -19,6 +21,17 @@
 <script>
 export default {
   name: "Header",
+  data() {
+    return {
+      selectedLanguage: this.$i18n.locale,
+    };
+  },
+  methods: {
+    changeLanguage(lang) {
+      this.$i18n.locale = lang;
+      this.selectedLanguage = lang;
+    },
+  },
 };
 </script>
 
@@ -40,7 +53,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 24px;
+  gap: 48px;
 }
 
 .navigation-list-item {
