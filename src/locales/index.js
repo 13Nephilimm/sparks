@@ -8,6 +8,9 @@ const messages = {
     services: "Services",
     blog: "Blog",
     contact: "Contact",
+    send: "send",
+    your_email: "your email",
+    your_message: "your message",
   },
   ge: {
     home: "მთავარი",
@@ -15,6 +18,9 @@ const messages = {
     services: "სერვისები",
     blog: "ბლოგი",
     contact: "კონტაქტი",
+    send: "გაგზავნა",
+    your_email: "თქვენი ელ. ფოსტა",
+    your_message: "თქვენი შეტყობინება",
   },
 };
 
