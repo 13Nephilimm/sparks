@@ -1,17 +1,34 @@
 <template>
   <header>
     <div class="logo-container">
-      <img src="/assets/pink-logo.svg" alt="logo" class="header-logo">
+      <img src="/assets/white-logo.svg" alt="logo" class="header-logo" />
     </div>
     <nav class="navigation-container">
       <ul class="navigation-list">
-        <li><a href="/" class="navigation-list-item">{{ $t('home') }}</a></li>
-        <li><a href="/about-us" class="navigation-list-item">{{ $t('about') }}</a></li>
-        <li><a href="/services" class="navigation-list-item">{{ $t('services') }}</a></li>
-        <li><a href="/blog" class="navigation-list-item">{{ $t('blog') }}</a></li>
-        <li><a href="/contact-us" class="navigation-list-item">{{ $t('contact') }}</a></li>
-        <button class="lang-switcher" @click="changeLanguage(selectedLanguage === 'en' ? 'ge' : 'en')">
-          {{ selectedLanguage === 'en' ? 'GE' : 'EN' }}
+        <li>
+          <a href="/" class="navigation-list-item">{{ $t("home") }}</a>
+        </li>
+        <li>
+          <a href="/about-us" class="navigation-list-item">{{ $t("about") }}</a>
+        </li>
+        <li>
+          <a href="/services" class="navigation-list-item">{{
+            $t("services")
+          }}</a>
+        </li>
+        <li>
+          <a href="/blog" class="navigation-list-item">{{ $t("blog") }}</a>
+        </li>
+        <li>
+          <a href="/contact-us" class="navigation-list-item">{{
+            $t("contact")
+          }}</a>
+        </li>
+        <button
+          class="lang-switcher"
+          @click="changeLanguage(selectedLanguage === 'en' ? 'ge' : 'en')"
+        >
+          {{ selectedLanguage === "en" ? "GE" : "EN" }}
         </button>
       </ul>
     </nav>
@@ -41,7 +58,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: var(--main-blue);
+  background-color: var(--background-color);
   display: flex;
   align-items: center;
   justify-content: space-between;

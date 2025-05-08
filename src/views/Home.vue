@@ -1,39 +1,64 @@
 <template>
-  <section class="hero-section">
-    <div class="hero-text-container">
-      <h1 class="main-heading">Explore The Digital Sparks!</h1>
-      <p class="main-text">
-        Ignite your brand's potential with Sparks! We craft innovative digital
-        marketing strategies <br />
-        that drive
-        <strong class="accent-word-1">growth, </strong>
-        <strong class="accent-word-2">engagement,</strong> and
-        <strong class="accent-word-3">success.</strong> Let's spark your digital
-        journey today!
-      </p>
-      <Button color="blue" text="Explore Now" class="explore-btn" />
-    </div>
-    <div>
-      <div class="spotlight spotlight-1"></div>
-      <div class="spotlight spotlight-2"></div>
-      <div class="spotlight spotlight-3"></div>
-      <spline-viewer class="hero-robot"
-        url="https://prod.spline.design/Z4V1jnGb2pYsmYM7/scene.splinecode"></spline-viewer>
-    </div>
-  </section>
+  <div class="wrapper">
+    <section class="hero-section">
+      <div class="hero-text-container">
+        <h1 class="main-heading">Sparks Agency</h1>
+      </div>
+      <spline-viewer
+        class="main-star"
+        url="https://prod.spline.design/js7DVKrgKncN0iXw/scene.splinecode"
+      ></spline-viewer>
+    </section>
+    <InfiniteSlider :text="sliderText1" :speed="48" />
+    <section class="about-section">
+      <div class="about-container">
+        <div class="about-text-container">
+          <h2>Who Are We?</h2>
+          <p>
+            SPARKS entered the Georgian market on February 1, 2025, with a
+            mission to boost startups' visibility on social networks through
+            effective advertising. Today our company already helps many
+            well-known businesses to take the right marketing steps. Our main
+            distinguishing feature is an individual approach to projects. By
+            meticulously studying our clients' interests and objectives, we
+            create tailored strategies to ensure their success.
+          </p>
+        </div>
+        <div class="about-text-container">
+          <h2>Our Goal</h2>
+          <p>
+            Our aim is to assist companies in reaching higher levels of success,
+            which is much easier with our team. If you've ever wondered, 'How
+            can I increase my brand's visibility?' then our goal is to support
+            you and your business in the world of marketing. To take easy steps
+            towards great success, we offer the following services: Creating a
+            marketing strategy / Management of social networks / Content
+            creation / Production Branding
+          </p>
+        </div>
+      </div>
+    </section>
+    <InfiniteSlider :text="sliderText2" :speed="48" />
+  </div>
 </template>
 
 <script>
 import Button from "../components/elements/Button.vue";
+import InfiniteSlider from "@/components/base/InfiniteSlider.vue";
+
 export default {
   name: "Home",
 
   components: {
     Button,
+    InfiniteSlider,
   },
 
   data() {
-    return {};
+    return {
+      sliderText1: "About Us",
+      sliderText2: "Services",
+    };
   },
 };
 </script>
@@ -45,84 +70,61 @@ export default {
   position: relative;
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 24px;
+  margin-bottom: 24px;
 }
 
 .hero-text-container {
   padding: 24px;
-  margin: 0 0 96px 48px;
 }
 
 .main-heading {
-  font-weight: 300;
+  font-weight: 800;
   text-transform: uppercase;
-  font-size: 64px;
-  color: var(--main-blue);
+  font-size: 108px;
+  color: var(--text-color);
+  word-spacing: 96px;
+  text-align: center;
 }
 
-.main-text {
-  font-size: 20px;
-  font-weight: 500;
-  margin-bottom: 36px;
-}
-
-.accent-word-1,
-.accent-word-2,
-.accent-word-3 {
-  text-transform: uppercase;
-  font-weight: 300;
-  font-size: 22px;
-}
-
-.accent-word-1 {
-  color: var(--main-pink);
-}
-
-.accent-word-2 {
-  color: var(--main-yellow);
-}
-
-.accent-word-3 {
-  color: var(--main-blue);
-}
-
-.explore-btn {
-  margin-bottom: 80px;
-}
-
-.hero-robot {
+.main-star {
   position: absolute;
   top: 50%;
-  left: 20%;
-  transform: translateY(-50%);
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: -1;
 }
 
-.spotlight {
-  content: "";
-  width: 300px;
-  height: 0;
-  position: absolute;
-  rotate: -30deg;
-  z-index: -1;
+/* ABOUT US */
+.about-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  margin: 96px 0;
 }
 
-.spotlight-1 {
-  top: 25%;
-  right: 5%;
-  box-shadow: 0 0 200px 15px var(--main-pink);
+.about-container {
+  max-width: 1200px;
+  display: flex;
+  gap: 24px;
 }
 
-.spotlight-2 {
-  bottom: 25%;
-  left: 25%;
-  box-shadow: 0 0 200px 20px var(--main-blue);
+.about-text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
-.spotlight-3 {
-  top: 25%;
-  left: 5%;
-  box-shadow: 0 0 200px 15px var(--text-color);
+.about-text-container h2 {
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.about-text-container p {
+  font-weight: 400;
 }
 
 /* @media only screen and (max-width: 1570px) {
