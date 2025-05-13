@@ -20,7 +20,7 @@
           <input
             type="email"
             class="mail-input"
-            placeholder="SEND US YOUR MAIL..."
+            placeholder="Your E-mail"
             v-model="email"
           />
           <textarea

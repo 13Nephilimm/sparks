@@ -39,12 +39,16 @@
       </div>
     </section>
     <InfiniteSlider :text="sliderText2" :speed="48" />
+    <MainAccordion />
+    <ContactSection />
   </div>
 </template>
 
 <script>
+import MainAccordion from "@/components/elements/MainAccordion.vue";
 import Button from "../components/elements/Button.vue";
 import InfiniteSlider from "@/components/base/InfiniteSlider.vue";
+import ContactSection from "@/components/base/ContactSection.vue";
 
 export default {
   name: "Home",
@@ -52,6 +56,8 @@ export default {
   components: {
     Button,
     InfiniteSlider,
+    MainAccordion,
+    ContactSection,
   },
 
   data() {
